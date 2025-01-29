@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustGrainy.js</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <!-- Cursor element -->
+    <div class="cursor"></div>
+
+    <!-- Grain overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Main content -->
+    <header>
+        <nav>
+            <span>JustGrainy.js</span>
+            <a href="https://buggy.tools" target="_blank">buggy.tools</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Add beautiful <span class="toggle-text">grain effects</span> to your website.</h1>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                No dependencies, just vibes.
+            </div>
+            <a href="https://www.evotions.cc" target="_blank">evotions.cc</a>
+        </div>
+    </footer>
+
+    <script src="./cursor.js"></script>
+    <script src="./lib/justgrainy.js""></script>
+    <script>
+        // Initialize grain effect
+        const grain = new JustGrainy({
+            intensity: 50,
+            opacity: 0.3
+        });
+
+        // Toggle grain on/off with the text click
+        document.querySelector('.toggle-text').addEventListener('click', function () {
+            this.classList.toggle('off');
+            grain.toggle();
+        });
+    </script>
+</body>
+
+</html>
